@@ -9,39 +9,37 @@ var generateBtn = document.querySelector("#generate")
 
 function generatePassword(){
  
-  var Length = prompt("Choose the amount of characters for your password. Password must contain between 8 and 128 characters.");
-
-  while(Length <= 7 || Length >= 129) {
-      alert("Password must be 8-128 characters long");
-      var Length = prompt("How many characters would you like in your password? Password must contain between 8 and 128 characters.");
-      } 
-
- 
-      var Spec = confirm("Click OK to include special characters");
-      var Num = confirm("Click OK to include numbers");    
-      var Low = confirm("Click OK to include lowercase letters");
-      var Up = confirm("Click OK to include uppercase letters");
- 
-      while(Up === false && Low === false && Spec === false && Num === false) {
-        alert("You must choose at least one set of characters");
-        var Spec = confirm("Click OK to include special characters");
-        var Num = confirm("Click OK to include numbers");    
-        var Low = confirm("Click OK to include lowercase letters");
-        var Up = confirm("Click OK to include uppercase letters");   
-    } 
-  var passwordC = []
+   var Length = prompt("How many characters for your password. Password must contain between 8 and 128 characters.");
+   while(Length <= 7 || Length >= 129) 
+    {alert("Password must be 8-128 characters long") ; Length = prompt("How many characters for your password")}
+  
       
-    if (Spec = true) {passwordC = passwordC .concat(specialChar)}
-    if (Num = true) {passwordC = passwordC .concat(number)}
-    if (Low = true) {passwordC = passwordC .concat(Lower)}
-    if (Up = true) {passwordC = passwordC .concat(Upper)}
-
-      console.log(passwordC)
+  
+   var Spec = confirm("Click OK to include special characters");
+   var Num = confirm("Click OK to include numbers");    
+   var Low = confirm("Click OK to include lowercase letters");
+   var Up = confirm("Click OK to include uppercase letters");
+  
+  while(Up === false && Low === false && Spec === false && Num === false) {
+    alert("You must choose at least one set of characters"); 
+     Spec = confirm("Click OK to include special characters");
+     Num = confirm("Click OK to include numbers");    
+     Low = confirm("Click OK to include lowercase letters");
+     Up = confirm("Click OK to include uppercase letters");;
+    
+  }
+  
+  var passC = []
+      
+    if (Spec = true) {passC = passC .concat(specialChar)}
+    if (Num = true) {passC = passC .concat(number)}
+    if (Low = true) {passC = passC .concat(Lower)}
+    if (Up = true) {passC = passC .concat(Upper)}
 
       var finalp = ""
       
       for (var i = 0; i < Length; i++) {
-        finalp = finalp + passwordC[Math.floor(Math.random() * passwordC.length)];
+        finalp = finalp + passC[Math.floor(Math.random() * passC.length)];
         console.log(finalp)
       }
       return finalp;}
